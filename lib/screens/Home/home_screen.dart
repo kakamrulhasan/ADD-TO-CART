@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_8/models/product_model.dart';
 import 'package:flutter_application_8/screens/Home/widget/category.dart';
 import 'package:flutter_application_8/screens/Home/widget/home_app_bar.dart';
 import 'package:flutter_application_8/screens/Home/widget/image_slide.dart';
+import 'package:flutter_application_8/screens/Home/widget/product_cart.dart';
 import 'package:flutter_application_8/screens/Home/widget/search_bar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -55,7 +57,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),te),
+              GridView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.78,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10
+                ),
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  return ProductCart(product: products[index]);
+                },
+              ),
             ],
           ),
         ),
