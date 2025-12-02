@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_8/color_plate.dart';
+import 'package:flutter_application_8/screens/Home/widget/home_app_bar.dart';
+import 'package:flutter_application_8/screens/Home/widget/search_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,18 +20,9 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  IconButton(
-                    style: IconButton.styleFrom(
-                      backgroundColor: kcontentColor,
-                      padding: EdgeInsets.all(20),
-                    ),
-                    onPressed: () {},
-                    icon: Image.asset("assets/images/icon.png", height: 20),
-                  ),
-                ],
-              ),
+              CustomAppBar(),
+              SizedBox(height: 20,),
+              MySearchBar(),
             ],
           ),
         ),
@@ -38,3 +30,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
