@@ -1,0 +1,14 @@
+class Category {
+  final String title;
+  final String image;
+  Category({required this.title, required this.image});
+}
+
+final List<Category> xcategories = [
+  Category(title: 'Shoes', image: 'assets/images/shoes.png'),
+  Category(title: 'Beauty', image: 'assets/images/beauty.png'),
+  Category(title: "women's\nFashion", image: 'assets/images/image1.png'),
+  Category(title: 'Jewelry', image: 'assets/images/jewelry.png'),
+  Category(title: "men's\nFashion", image: 'assets/images/men.png'),
+  Category(title: "Chiffon\nDress", image: 'assets/images/profile3.png'),
+];

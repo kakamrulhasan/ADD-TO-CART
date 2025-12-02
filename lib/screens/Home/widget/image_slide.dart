@@ -32,7 +32,7 @@ class ImageSlide extends StatelessWidget {
           ),
         ),
         Positioned.fill(
-          bottom:  10,
+          bottom: 10,
           child: Align(
             alignment: Alignment.bottomCenter,
             child: Row(
@@ -49,7 +49,7 @@ class ImageSlide extends StatelessWidget {
                     color: currentSlide == index
                         ? Colors.black
                         : Colors.transparent,
-                        border:  Border.all(color: Colors.black),
+                    border: Border.all(color: Colors.black),
                   ),
                 ),
               ),

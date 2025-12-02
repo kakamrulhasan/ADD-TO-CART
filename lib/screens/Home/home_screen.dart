@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_8/screens/Home/widget/category.dart';
 import 'package:flutter_application_8/screens/Home/widget/home_app_bar.dart';
 import 'package:flutter_application_8/screens/Home/widget/image_slide.dart';
 import 'package:flutter_application_8/screens/Home/widget/search_bar.dart';
@@ -33,6 +34,22 @@ class _HomeScreenState extends State<HomeScreen> {
                     currentSlider = value;
                   });
                 },
+              ),
+              SizedBox(height: 20),
+              Categories(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Special For You',
+                    style: TextStyle(fontSize: 25,
+                     fontWeight: FontWeight.w800),
+                  ),
+                  Text('See all',style: TextStyle(fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  color: Colors.black54,),),
+                  SizedBox(width: 10,)
+                ],
               ),
             ],
           ),
