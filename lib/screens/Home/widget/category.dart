@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_8/models/category_list.dart';
+import 'package:flutter_application_8/models/category_model.dart';
 
 class Categories extends StatelessWidget {
   Categories({super.key});

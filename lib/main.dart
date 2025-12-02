@@ -16,7 +16,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.mulishTextTheme(),
       ),
-      home:  SafeArea(child: BottomNavBar()),
+      home:  BottomNavBar(),
     );
   }
 }

@@ -23,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 20),
               CustomAppBar(),
               SizedBox(height: 20),
               MySearchBar(),
@@ -42,15 +43,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text(
                     'Special For You',
-                    style: TextStyle(fontSize: 25,
-                     fontWeight: FontWeight.w800),
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
                   ),
-                  Text('See all',style: TextStyle(fontWeight: FontWeight.w500,
-                  fontSize: 16,
-                  color: Colors.black54,),),
-                  SizedBox(width: 10,)
+                  Text(
+                    'See all',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      color: Colors.black54,
+                    ),
+                  ),
                 ],
               ),
+              GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),te),
             ],
           ),
         ),
