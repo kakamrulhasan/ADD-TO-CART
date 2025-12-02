@@ -29,6 +29,7 @@ class _MySearchBarState extends State<MySearchBar> {
               ),
             ),
           ),
+          
           Container(height: 25, width: 1.5, color: Colors.grey),
           IconButton(
             onPressed: () {},

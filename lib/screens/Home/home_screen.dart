@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_8/screens/Home/widget/home_app_bar.dart';
+import 'package:flutter_application_8/screens/Home/widget/image_slide.dart';
 import 'package:flutter_application_8/screens/Home/widget/search_bar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -10,6 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int currentSlider = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,8 +23,17 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomAppBar(),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               MySearchBar(),
+              SizedBox(height: 20),
+              ImageSlide(
+                currentSlide: currentSlider,
+                onChange: (value) {
+                  setState(() {
+                    currentSlider = value;
+                  });
+                },
+              ),
             ],
           ),
         ),
@@ -30,4 +41,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
