@@ -3,7 +3,6 @@ import 'package:flutter_application_8/color_plate.dart';
 import 'package:flutter_application_8/models/product_model.dart';
 import 'package:flutter_application_8/screens/Detail/widget/detail_app_bar.dart';
 import 'package:flutter_application_8/screens/Detail/widget/image_slider.dart';
-import 'package:flutter_application_8/screens/Detail/widget/items_details.dart';
 
 class DetailScreen extends StatefulWidget {
   final Product product;
@@ -70,7 +69,7 @@ class _DetailScreenState extends State<DetailScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-ItemsDetails(product: widget.product)
+
                 ],
               ),
             ),
