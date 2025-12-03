@@ -12,7 +12,9 @@ class DetailAppBar extends StatelessWidget {
         children: [
           IconButton(
             style: IconButton.styleFrom(backgroundColor: kcontentColor),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             iconSize: 30,
             icon: Icon(Icons.arrow_back_ios),
           ),
@@ -22,7 +24,8 @@ class DetailAppBar extends StatelessWidget {
             onPressed: () {},
             iconSize: 30,
             icon: Icon(Icons.share_outlined),
-          ),SizedBox(width: 10,),
+          ),
+          SizedBox(width: 10),
           IconButton(
             style: IconButton.styleFrom(backgroundColor: kcontentColor),
             onPressed: () {},
