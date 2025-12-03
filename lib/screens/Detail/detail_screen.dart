@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_8/color_plate.dart';
 import 'package:flutter_application_8/models/product_model.dart';
+import 'package:flutter_application_8/screens/Detail/widget/add_to_cart.dart';
 import 'package:flutter_application_8/screens/Detail/widget/description.dart';
 import 'package:flutter_application_8/screens/Detail/widget/detail_app_bar.dart';
 import 'package:flutter_application_8/screens/Detail/widget/image_slider.dart';
@@ -21,7 +22,10 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kcontentColor,
+      floatingActionButton: AddToCart(product: widget.product),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
+        
         child: SingleChildScrollView(
           child: Column(
             children: [
