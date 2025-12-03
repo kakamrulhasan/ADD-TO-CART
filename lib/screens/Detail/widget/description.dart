@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_8/color_plate.dart';
 
 class Description extends StatelessWidget {
-  final String text;
-  const Description({super.key, required this.text});
+  final String description;
+  const Description({super.key, required this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -11,25 +11,46 @@ class Description extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
               width: 120,
               height: 40,
               decoration: BoxDecoration(
                 color: kprimaryColor,
+
                 borderRadius: BorderRadius.circular(20),
               ),
               alignment: Alignment.center,
               child: Text(
                 'Description',
                 style: TextStyle(
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
             ),
+            Text(
+              'Specifications',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontSize: 16,
+              ),
+            ),
+            Text(
+              'Reviews',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontSize: 16,
+              ),
+            ),
           ],
         ),
+        SizedBox(height: 20),
+        Text(description, style: TextStyle(fontSize: 16, color: Colors.grey)),
       ],
     );
   }
