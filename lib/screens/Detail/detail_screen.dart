@@ -15,6 +15,7 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   int currentImage = 0;
+  int currentColor = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +71,53 @@ class _DetailScreenState extends State<DetailScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-ItemsDetails(product: widget.product)
+                  ItemsDetails(product: widget.product),
+                  SizedBox(height: 20),
+                  Text(
+                    'Color',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    children: List.generate(
+                      widget.product.colors.length,
+                      (index) => GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            currentColor = index;
+                          });
+                        },
+                        child: AnimatedContainer(
+                          duration: Duration(milliseconds: 300),
+                          width: 35,
+                          height: 35,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: currentColor == index
+                                ? Colors.white
+                                : widget.product.colors[index],
+                            border: currentColor == index
+                                ? Border.all(
+                                    color: widget.product.colors[index],
+                                  )
+                                : null,
+                          ),
+                          padding: currentColor == index
+                              ?  EdgeInsets.all(2)
+                              : null,
+                          margin: EdgeInsets.only(right: 10),
+                          child: Container(
+                            width: 35,
+                            height: 35,
+                            decoration: BoxDecoration(
+                              color: widget.product.colors[index],
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),const SizedBox(height: 20,),
                 ],
               ),
             ),
