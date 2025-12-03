@@ -25,7 +25,6 @@ class _DetailScreenState extends State<DetailScreen> {
       floatingActionButton: AddToCart(product: widget.product),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
-        
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -81,7 +80,10 @@ class _DetailScreenState extends State<DetailScreen> {
                     SizedBox(height: 20),
                     Text(
                       'Color',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
                     ),
                     const SizedBox(height: 20),
                     Row(
@@ -125,7 +127,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    Description(description: widget.product.description)
+                    Description(description: widget.product.description),
                   ],
                 ),
               ),

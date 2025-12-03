@@ -13,7 +13,9 @@ class ProductCart extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => DetailScreen(product: product,)),
+          MaterialPageRoute(
+            builder: (context) => DetailScreen(product: product),
+          ),
         );
       },
       child: Stack(
@@ -29,11 +31,14 @@ class ProductCart extends StatelessWidget {
               children: [
                 SizedBox(height: 15),
                 Center(
-                  child: Image.asset(
-                    product.image,
-                    width: 130,
-                    height: 130,
-                    fit: BoxFit.cover,
+                  child: Hero(
+                    tag: product.image,
+                    child: Image.asset(
+                      product.image,
+                      width: 150,
+                      height: 150,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 SizedBox(height: 10),
@@ -72,6 +77,30 @@ class ProductCart extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
+          ),
+          Positioned(
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                  color: kprimaryColor,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    topLeft: Radius.circular(10),
+                  ),
+                ),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Icon(
+                    Icons.favorite_border,
+                    color: Colors.white,
+                    size: 22,
+                  ),
+                ),
+              ),
             ),
           ),
         ],
