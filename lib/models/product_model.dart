@@ -26,7 +26,7 @@ class Product {
   });
 }
 
-final List<Product> products = [
+final List<Product> all = [
   Product(
     title: "Wireless Headphones",
     description:

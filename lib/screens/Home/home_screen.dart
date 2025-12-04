@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_8/models/category_model.dart';
 import 'package:flutter_application_8/models/product_model.dart';
-import 'package:flutter_application_8/screens/Home/widget/category.dart';
 import 'package:flutter_application_8/screens/Home/widget/home_app_bar.dart';
 import 'package:flutter_application_8/screens/Home/widget/image_slide.dart';
 import 'package:flutter_application_8/screens/Home/widget/product_cart.dart';
@@ -15,8 +15,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentSlider = 0;
+ int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    List<List<Product>> selectedCategories = [all,shoes,beauty,womenFashion,jewelry,menFashion];
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -39,7 +41,54 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               SizedBox(height: 20),
-              Categories(),
+              SizedBox(
+      height: 130,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: xcategories.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+
+            child: Container(
+              padding: EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: selectedIndex == index
+                    ? Colors.blue[200]
+                    : Colors.transparent,
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    height: 65,
+                    width: 65,
+
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetImage(xcategories[index].image),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Text(
+                    xcategories[index].title,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    ),
+  
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -64,11 +113,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisCount: 2,
                   childAspectRatio: 0.78,
                   crossAxisSpacing: 20,
-                  mainAxisSpacing: 20
+                  mainAxisSpacing: 20,
                 ),
-                itemCount: products.length,
+                itemCount: selectedCategories[selectedIndex].length,
                 itemBuilder: (context, index) {
-                  return ProductCart(product: products[index]);
+                  return ProductCart(product: selectedCategories[selectedIndex][index]);
                 },
               ),
             ],
