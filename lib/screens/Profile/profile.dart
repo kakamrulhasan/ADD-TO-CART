@@ -10,7 +10,7 @@ class Profile extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset("images/profile3.png", fit: BoxFit.cover),
+            child: Image.asset("assets/images/woman2.png", fit: BoxFit.cover),
           ),
 
           /// Scrollable Card Section
@@ -42,7 +42,7 @@ class Profile extends StatelessWidget {
                                   const CircleAvatar(
                                     radius: 42,
                                     backgroundImage: AssetImage(
-                                      "images/profile3.png",
+                                      "assets/images/woman1.png",
                                     ),
                                   ),
                                   Positioned(

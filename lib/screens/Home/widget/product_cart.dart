@@ -37,7 +37,7 @@ class ProductCart extends StatelessWidget {
                     tag: product.image,
                     child: Image.asset(
                       product.image,
-                      width: 150,
+                      width: 140,
                       height: 150,
                       fit: BoxFit.cover,
                     ),

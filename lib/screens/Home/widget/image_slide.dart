@@ -24,9 +24,12 @@ class ImageSlide extends StatelessWidget {
               onPageChanged: onChange,
               physics: ClampingScrollPhysics(),
               children: [
+                Image.asset('assets/images/sneaker.png', fit: BoxFit.cover),
+                Image.asset('assets/images/poster1.png', fit: BoxFit.cover),
                 Image.asset('assets/images/slider.jpg', fit: BoxFit.cover),
-                Image.asset('assets/images/slider3.png', fit: BoxFit.cover),
                 Image.asset('assets/images/image1.png', fit: BoxFit.cover),
+                Image.asset('assets/images/slider3.png', fit: BoxFit.cover),
+
               ],
             ),
           ),

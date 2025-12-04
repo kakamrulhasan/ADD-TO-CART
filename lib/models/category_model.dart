@@ -5,6 +5,7 @@ class Category {
 }
 
 final List<Category> xcategories = [
+  Category(title: 'All', image: 'assets/images/all.png'),
   Category(title: 'Shoes', image: 'assets/images/shoes.png'),
   Category(title: 'Beauty', image: 'assets/images/beauty.png'),
   Category(title: "women's\nFashion", image: 'assets/images/image1.png'),
