@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_8/Provider/cart_provider.dart';
 import 'package:flutter_application_8/color_plate.dart';
 import 'package:flutter_application_8/models/product_model.dart';
-import 'package:provider/provider.dart';
 
 class AddToCart extends StatefulWidget {
   final Product product;
@@ -58,9 +57,9 @@ class _AddToCartState extends State<AddToCart> {
                   const SizedBox(width: 5),
                   IconButton(
                     onPressed: () {
-                      setState(() {
+                      if(currentIndex<10){setState(() {
                         currentIndex++;
-                      });
+                      });}
                     },
                     icon: Icon(Icons.add, color: Colors.white),
                   ),
