@@ -3,6 +3,7 @@ import 'package:flutter_application_8/color_plate.dart';
 import 'package:flutter_application_8/screens/Cart/cart_screen.dart';
 import 'package:flutter_application_8/screens/Favourite/favourite_screen.dart';
 import 'package:flutter_application_8/screens/Home/home_screen.dart';
+import 'package:flutter_application_8/screens/Profile/profile.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -18,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               Favourite(),
               HomeScreen(),
               CartScreen(),
-              Scaffold(),
+              Profile(),
             ];
   @override
   Widget build(BuildContext context) {
