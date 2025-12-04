@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_8/Provider/cart_provider.dart';
+import 'package:flutter_application_8/Provider/favourite_provider.dart';
 import 'package:flutter_application_8/screens/nav_bar_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +13,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MultiProvider(providers: [
-    ChangeNotifierProvider(create: (_)=>CartProvider(),)
+    ChangeNotifierProvider(create: (_)=>CartProvider(),),
+    ChangeNotifierProvider(create: (_)=>FavouriteProvider(),),
   ],
     child:  MaterialApp(
       debugShowCheckedModeBanner: false,

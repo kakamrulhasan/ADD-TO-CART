@@ -1,36 +1,54 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter_application_8/color_plate.dart';
+import 'package:flutter_application_8/Provider/favourite_provider.dart';
+import 'package:flutter_application_8/models/product_model.dart';
 
 class DetailAppBar extends StatelessWidget {
-  DetailAppBar({super.key});
+  final Product product;
+  const DetailAppBar({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
+    final provider = FavouriteProvider.of(context);
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Row(
         children: [
           IconButton(
-            style: IconButton.styleFrom(backgroundColor: kcontentColor),
+            style: IconButton.styleFrom(
+              backgroundColor: Colors.white,
+              padding: const EdgeInsets.all(15),
+            ),
             onPressed: () {
               Navigator.pop(context);
             },
-            iconSize: 30,
-            icon: Icon(Icons.arrow_back_ios),
+            icon: const Icon(Icons.arrow_back_ios),
           ),
-          Spacer(),
+          const Spacer(),
           IconButton(
-            style: IconButton.styleFrom(backgroundColor: kcontentColor),
+            style: IconButton.styleFrom(
+              backgroundColor: Colors.white,
+              padding: const EdgeInsets.all(15),
+            ),
             onPressed: () {},
-            iconSize: 30,
-            icon: Icon(Icons.share_outlined),
+            icon: const Icon(Icons.share_outlined),
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           IconButton(
-            style: IconButton.styleFrom(backgroundColor: kcontentColor),
-            onPressed: () {},
-            iconSize: 30,
-            icon: Icon(Icons.favorite),
+            style: IconButton.styleFrom(
+              backgroundColor: Colors.white,
+              padding: const EdgeInsets.all(15),
+            ),
+            onPressed: () {
+              provider.toggleFavourite(product);
+            },
+            icon: Icon(
+              provider.isExit(product)
+                  ? Icons.favorite
+                  : Icons.favorite_border,
+              color: Colors.black,
+              size: 25,
+            ),
           ),
         ],
       ),

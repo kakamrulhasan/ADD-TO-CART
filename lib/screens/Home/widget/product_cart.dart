@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_8/Provider/favourite_provider.dart';
 import 'package:flutter_application_8/color_plate.dart';
 import 'package:flutter_application_8/models/product_model.dart';
 import 'package:flutter_application_8/screens/Detail/detail_screen.dart';
@@ -9,6 +10,7 @@ class ProductCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = FavouriteProvider.of(context);
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -93,9 +95,12 @@ class ProductCart extends StatelessWidget {
                   ),
                 ),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    provider.toggleFavourite(product);
+                  },
                   child: Icon(
-                    Icons.favorite_border,
+                    provider.isExit(product)?Icons.favorite:Icons.favorite_border,
+                    
                     color: Colors.white,
                     size: 22,
                   ),

@@ -28,7 +28,7 @@ class _DetailScreenState extends State<DetailScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              DetailAppBar(),
+              DetailAppBar(product: widget.product,),
               myImageSlider(
                 onChange: (index) {
                   setState(() {
