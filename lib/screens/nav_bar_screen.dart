@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_8/color_plate.dart';
 import 'package:flutter_application_8/screens/Cart/cart_screen.dart';
-import 'package:flutter_application_8/screens/favourite_screen.dart';
+import 'package:flutter_application_8/screens/Favourite/favourite_screen.dart';
 import 'package:flutter_application_8/screens/Home/home_screen.dart';
 
 class BottomNavBar extends StatefulWidget {

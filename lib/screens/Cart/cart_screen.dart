@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_8/Provider/cart_provider.dart';
 import 'package:flutter_application_8/color_plate.dart';
+import 'package:flutter_application_8/screens/Cart/check_out.dart';
 import 'package:flutter_application_8/screens/nav_bar_screen.dart';
 
 class CartScreen extends StatefulWidget {
@@ -30,6 +31,7 @@ class _CartScreenState extends State<CartScreen> {
     }
 
     return Scaffold(
+      bottomSheet: CheckOutBox(),
       backgroundColor: kcontentColor,
       body: SafeArea(
         child: Column(
